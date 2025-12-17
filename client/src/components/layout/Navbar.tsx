@@ -22,65 +22,53 @@ export function Navbar() {
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-          <a className="font-serif text-xl font-bold text-primary flex items-center gap-2">
+        <Link href="/" className="font-serif text-xl font-bold text-primary flex items-center gap-2">
             <span className="bg-primary text-primary-foreground p-1 rounded-md">RG</span>
             Research Group
-          </a>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:block">
-          <NavigationMenuList className="flex gap-1 list-none">
-            <NavigationMenuItem>
-              <Link href="/">
-                <a className={cn(navigationMenuTriggerStyle(), isActive("/") && "bg-accent text-accent-foreground")}>
+          <NavigationMenu>
+            <NavigationMenuList className="flex gap-1 list-none">
+              <NavigationMenuItem>
+                <Link href="/" className={cn(navigationMenuTriggerStyle(), isActive("/") && "bg-accent text-accent-foreground")}>
                   Home
-                </a>
-              </Link>
-            </NavigationMenuItem>
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem className="relative group">
-              <Link href="/team">
-                 <a className={cn(navigationMenuTriggerStyle(), isActive("/team") && "bg-accent text-accent-foreground")}>
+              <NavigationMenuItem>
+                <Link href="/team" className={cn(navigationMenuTriggerStyle(), isActive("/team") && "bg-accent text-accent-foreground")}>
                   Team
-                </a>
-              </Link>
-            </NavigationMenuItem>
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link href="/news">
-                <a className={cn(navigationMenuTriggerStyle(), isActive("/news") && "bg-accent text-accent-foreground")}>
+              <NavigationMenuItem>
+                <Link href="/news" className={cn(navigationMenuTriggerStyle(), isActive("/news") && "bg-accent text-accent-foreground")}>
                   News
-                </a>
-              </Link>
-            </NavigationMenuItem>
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem className="relative group">
-              <Link href="/results">
-                <a className={cn(navigationMenuTriggerStyle(), isActive("/results") && "bg-accent text-accent-foreground")}>
+              <NavigationMenuItem>
+                <Link href="/results" className={cn(navigationMenuTriggerStyle(), isActive("/results") && "bg-accent text-accent-foreground")}>
                   Results
-                </a>
-              </Link>
-            </NavigationMenuItem>
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link href="/contact">
-                <a className={cn(navigationMenuTriggerStyle(), isActive("/contact") && "bg-accent text-accent-foreground")}>
+              <NavigationMenuItem>
+                <Link href="/contact" className={cn(navigationMenuTriggerStyle(), isActive("/contact") && "bg-accent text-accent-foreground")}>
                   Contact
-                </a>
-              </Link>
-            </NavigationMenuItem>
-            
-             <NavigationMenuItem>
-              <Link href="/repos">
-                <a className={cn(navigationMenuTriggerStyle(), isActive("/repos") && "bg-accent text-accent-foreground")}>
+                </Link>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <Link href="/repos" className={cn(navigationMenuTriggerStyle(), isActive("/repos") && "bg-accent text-accent-foreground")}>
                   <Github className="w-4 h-4 mr-2" />
                   Repos
-                </a>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -92,24 +80,12 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-b bg-background p-4 flex flex-col gap-2">
-          <Link href="/">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Home</a>
-          </Link>
-          <Link href="/team">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Team</a>
-          </Link>
-          <Link href="/news">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>News</a>
-          </Link>
-          <Link href="/results">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Results</a>
-          </Link>
-          <Link href="/contact">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Contact</a>
-          </Link>
-          <Link href="/repos">
-            <a className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Github Repos</a>
-          </Link>
+          <Link href="/" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/team" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Team</Link>
+          <Link href="/news" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>News</Link>
+          <Link href="/results" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Results</Link>
+          <Link href="/contact" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Contact</Link>
+          <Link href="/repos" className="p-2 hover:bg-accent rounded-md" onClick={() => setIsOpen(false)}>Github Repos</Link>
         </div>
       )}
     </nav>
