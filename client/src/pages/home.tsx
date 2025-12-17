@@ -27,7 +27,7 @@ export default function Home() {
               Avançando o conhecimento de estratégia e tomada de decisão por meio de inteligência artificial
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              O AI Lab Mackenzie é um laboratório voltado à pesquisa e à aplicação de Inteligência Artificial em estratégia, tomada de decisão, inovação, transformação digital e comportamento organizacional. Está ligado à Escola de Negócios Mackenzie e ao Centro de Ciências Sociais Aplicadas da Universidade Presbiteriana Mackenzie, integrando pesquisa acadêmica e formação avançada. O laboratório reúne docentes, pesquisadores e estudantes para investigar os impactos da IA sobre organizações que operam em contextos complexos, com atenção ao desenvolvimento de métodos, modelos e aplicações que promovam o uso responsável e estratégico da Inteligência Artificial.
+              O AI Lab Mackenzie é um laboratório dedicado à pesquisa em Inteligência Artificial aplicada à estratégia, à tomada de decisão, à inovação, à transformação digital e ao comportamento organizacional. Vinculado à Escola de Negócios Mackenzie e ao Centro de Ciências Sociais Aplicadas da Universidade Presbiteriana Mackenzie, reune docentes, pesquisadores e estudantes para investigar os impactos da IA em organizações que operam em contextos complexos.
             </p>
             <div className="flex gap-4">
               <Link href="/results">
