@@ -43,7 +43,7 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
 
-  --primary: 221 83% 53%; /* Academic Blue */
+  --primary: 348 94% 47%; /* Mackenzie Red */
   --primary-foreground: 210 40% 98%;
 
   --secondary: 210 40% 96.1%;
@@ -60,7 +60,7 @@
 
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 221 83% 53%;
+  --ring: 348 94% 47%;
 
   --radius: 0.5rem;
 }

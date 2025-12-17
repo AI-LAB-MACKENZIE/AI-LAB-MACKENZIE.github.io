@@ -92,10 +92,13 @@ export function Navbar() {
   );
 }
 
+import mackenzieLogo from "@assets/image_1766007305157.png";
+
 export function Footer() {
   return (
     <footer className="border-t py-8 bg-muted/30">
-      <div className="container mx-auto px-4 text-center text-muted-foreground">
+      <div className="container mx-auto px-4 flex flex-col items-center gap-4 text-center text-muted-foreground">
+        <img src={mackenzieLogo} alt="Universidade Presbiteriana Mackenzie" className="h-12 object-contain" />
         <p>&copy; {new Date().getFullYear()} Research Group. All rights reserved.</p>
       </div>
     </footer>
