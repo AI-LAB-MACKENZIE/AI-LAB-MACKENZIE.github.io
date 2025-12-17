@@ -33,8 +33,8 @@ export default function Team() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Especialista em análise computacional e desenvolvimento de algoritmos com mais de 10 anos de experiência.
+                    <p className="text-sm text-muted-foreground font-semibold">
+                      Universidade Presbiteriana Mackenzie
                     </p>
                   </CardContent>
                 </Card>
@@ -46,13 +46,19 @@ export default function Team() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                {[1, 2, 3].map((i) => (
                 <Card key={i}>
-                  <CardHeader>
-                    <CardTitle>Dr. Colaborador {i}</CardTitle>
-                    <CardDescription>Universidade Tecnológica</CardDescription>
+                  <CardHeader className="flex flex-row items-center gap-4">
+                    <Avatar className="h-16 w-16">
+                      <AvatarImage src={`https://i.pravatar.cc/150?u=${i+10}`} />
+                      <AvatarFallback>CB</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <CardTitle>Dr. Colaborador {i}</CardTitle>
+                      <CardDescription>Pesquisador Associado</CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Pesquisa conjunta em sistemas distribuídos e arquiteturas de computação em nuvem.
+                    <p className="text-sm text-muted-foreground font-semibold">
+                      Universidade Tecnológica
                     </p>
                   </CardContent>
                 </Card>
