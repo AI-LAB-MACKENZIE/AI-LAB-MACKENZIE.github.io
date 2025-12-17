@@ -24,7 +24,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="font-serif text-xl font-bold text-primary flex items-center gap-2">
             <span className="bg-primary text-primary-foreground p-1 rounded-md">AI</span>
-            AI LAB Mackenzie
+            Lab Mackenzie
         </Link>
 
         {/* Desktop Menu */}

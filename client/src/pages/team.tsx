@@ -20,21 +20,28 @@ export default function Team() {
           
           <TabsContent value="project-team" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                { name: "Fellipe de Assis Silva", role: "Pesquisador Chefe", university: "Universidade Presbiteriana Mackenzie", initials: "FS" },
+                { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP" },
+                { name: "Manuel Jose Fonseca Castelo Branco", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MB" },
+                { name: "Claudio Luiz Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL" },
+                { name: "Dimas Reis", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "DR" },
+                { name: "Lilian Vizzoni", role: "Doutoranda", university: "Universidade Presbiteriana Mackenzie", initials: "LV" },
+              ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
                     <Avatar className="h-16 w-16">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=${i}`} />
-                      <AvatarFallback>RS</AvatarFallback>
+                      <AvatarImage src={`https://i.pravatar.cc/150?u=${member.name}`} />
+                      <AvatarFallback>{member.initials}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <CardTitle>Pesquisador {i}</CardTitle>
-                      <CardDescription>Investigador Principal</CardDescription>
+                      <CardTitle className="text-lg">{member.name}</CardTitle>
+                      <CardDescription>{member.role}</CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground font-semibold">
-                      Universidade Presbiteriana Mackenzie
+                      {member.university}
                     </p>
                   </CardContent>
                 </Card>
