@@ -21,12 +21,11 @@ export default function Team() {
           <TabsContent value="project-team" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Fellipe de Assis Silva", role: "Pesquisador Chefe", university: "Universidade Presbiteriana Mackenzie", initials: "FS" },
-                { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP" },
-                { name: "Manuel Jose Fonseca Castelo Branco", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MB" },
-                { name: "Claudio Luiz Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL" },
-                { name: "Dimas Reis", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "DR" },
-                { name: "Lilian Vizzoni", role: "Doutoranda", university: "Universidade Presbiteriana Mackenzie", initials: "LV" },
+                { name: "Fellipe Silva Martins", role: "Pesquisador Principal", university: "Universidade Presbiteriana Mackenzie", initials: "FM", lattes: "#" },
+                { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "#" },
+                { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "#" },
+                { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "#" },
+                { name: "Rachel Horta", role: "Doutorada", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "#" },
               ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
@@ -36,7 +35,13 @@ export default function Team() {
                     </Avatar>
                     <div>
                       <CardTitle className="text-lg">{member.name}</CardTitle>
-                      <CardDescription>{member.role}</CardDescription>
+                      <CardDescription>
+                        {member.role}
+                        <br />
+                        <a href={member.lattes} className="text-primary hover:underline text-xs" target="_blank" rel="noreferrer">
+                          Currículo Lattes
+                        </a>
+                      </CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent>
