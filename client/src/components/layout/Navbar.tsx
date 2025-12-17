@@ -97,8 +97,8 @@ import mackenzieLogo from "@assets/image_1766007305157.png";
 export function Footer() {
   return (
     <footer className="border-t py-8 bg-muted/30">
-      <div className="container mx-auto px-4 flex flex-col items-center gap-4 text-center text-muted-foreground">
-        <img src={mackenzieLogo} alt="Universidade Presbiteriana Mackenzie" className="h-12 object-contain" />
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-8 text-muted-foreground">
+        <img src={mackenzieLogo} alt="Universidade Presbiteriana Mackenzie" className="h-[4.5rem] object-contain" />
         <p>&copy; {new Date().getFullYear()} Research Group. All rights reserved.</p>
       </div>
     </footer>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Beaker, Users, FileText } from "lucide-react";
 import { Link } from "wouter";
-import heroImage from "@assets/generated_images/modern_abstract_scientific_research_visualization.png";
+import heroImage from "@assets/generated_images/abstract_red_and_white_geometric_background.png";
 
 export default function Home() {
   return (
