@@ -9,13 +9,13 @@ export default function Team() {
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Our Team</h1>
+        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Nossa Equipe</h1>
         
         <Tabs defaultValue="project-team" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="project-team">Research Project Team</TabsTrigger>
-            <TabsTrigger value="collaborators">Collaborators</TabsTrigger>
-            <TabsTrigger value="partnerships">Partnerships</TabsTrigger>
+            <TabsTrigger value="project-team">Equipe do Projeto</TabsTrigger>
+            <TabsTrigger value="collaborators">Colaboradores</TabsTrigger>
+            <TabsTrigger value="partnerships">Parcerias</TabsTrigger>
           </TabsList>
           
           <TabsContent value="project-team" className="space-y-6">
@@ -28,13 +28,13 @@ export default function Team() {
                       <AvatarFallback>RS</AvatarFallback>
                     </Avatar>
                     <div>
-                      <CardTitle>Researcher Name</CardTitle>
-                      <CardDescription>Principal Investigator</CardDescription>
+                      <CardTitle>Pesquisador {i}</CardTitle>
+                      <CardDescription>Investigador Principal</CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Specializing in computational analysis and algorithm development with over 10 years of experience.
+                      Especialista em análise computacional e desenvolvimento de algoritmos com mais de 10 anos de experiência.
                     </p>
                   </CardContent>
                 </Card>
@@ -47,12 +47,12 @@ export default function Team() {
                {[1, 2, 3].map((i) => (
                 <Card key={i}>
                   <CardHeader>
-                    <CardTitle>Dr. Collaborator {i}</CardTitle>
-                    <CardDescription>University of Technology</CardDescription>
+                    <CardTitle>Dr. Colaborador {i}</CardTitle>
+                    <CardDescription>Universidade Tecnológica</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Joint research on distributed systems and cloud computing architectures.
+                      Pesquisa conjunta em sistemas distribuídos e arquiteturas de computação em nuvem.
                     </p>
                   </CardContent>
                 </Card>
@@ -67,9 +67,9 @@ export default function Team() {
                    <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
                      <span className="text-2xl font-bold text-muted-foreground">Logo</span>
                    </div>
-                   <CardTitle className="mb-2">Tech Partner {i}</CardTitle>
+                   <CardTitle className="mb-2">Parceiro Tecnológico {i}</CardTitle>
                    <p className="text-muted-foreground">
-                     Strategic partnership focusing on industrial application of our research findings.
+                     Parceria estratégica focada na aplicação industrial de nossas descobertas de pesquisa.
                    </p>
                 </Card>
               ))}

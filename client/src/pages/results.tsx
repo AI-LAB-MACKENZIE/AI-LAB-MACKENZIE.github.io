@@ -11,13 +11,13 @@ export default function Results() {
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Research Results</h1>
+        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Resultados da Pesquisa</h1>
         
         <Tabs defaultValue="projects" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="projects">Projects</TabsTrigger>
+            <TabsTrigger value="projects">Projetos</TabsTrigger>
             <TabsTrigger value="software">Software & Apps</TabsTrigger>
-            <TabsTrigger value="papers">Papers</TabsTrigger>
+            <TabsTrigger value="papers">Publicações</TabsTrigger>
           </TabsList>
           
           <TabsContent value="projects" className="space-y-6">
@@ -27,16 +27,16 @@ export default function Results() {
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>
-                        <CardTitle className="text-xl mb-2">Project Alpha: Advanced Data Analysis</CardTitle>
-                        <CardDescription>Funded by National Science Foundation</CardDescription>
+                        <CardTitle className="text-xl mb-2">Projeto Alpha: Análise Avançada de Dados</CardTitle>
+                        <CardDescription>Financiado pelo Conselho Nacional de Desenvolvimento Científico</CardDescription>
                       </div>
-                      <Badge variant="secondary">Ongoing</Badge>
+                      <Badge variant="secondary">Em Andamento</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      This project aims to develop new methodologies for analyzing large-scale datasets in real-time environments.
-                      We are investigating novel algorithms that reduce computational complexity while maintaining accuracy.
+                      Este projeto visa desenvolver novas metodologias para análise de grandes conjuntos de dados em ambientes de tempo real.
+                      Estamos investigando novos algoritmos que reduzem a complexidade computacional mantendo a precisão.
                     </p>
                     <div className="flex gap-2">
                       <Badge variant="outline">Big Data</Badge>
@@ -45,7 +45,7 @@ export default function Results() {
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" size="sm" className="gap-2">
-                      <ExternalLink className="w-4 h-4" /> View Details
+                      <ExternalLink className="w-4 h-4" /> Ver Detalhes
                     </Button>
                   </CardFooter>
                 </Card>
@@ -60,21 +60,21 @@ export default function Results() {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Code className="w-5 h-5 text-primary" />
-                      AnalysisTool v2.0
+                      FerramentaDeAnalise v2.0
                     </CardTitle>
-                    <CardDescription>Open Source Data Visualization Library</CardDescription>
+                    <CardDescription>Biblioteca de Visualização de Dados Open Source</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      A comprehensive library for visualizing complex network structures. Built with React and D3.
+                      Uma biblioteca abrangente para visualizar estruturas de rede complexas. Construída com React e D3.
                     </p>
                   </CardContent>
                   <CardFooter className="flex gap-2">
                     <Button size="sm" className="gap-2">
-                      <Download className="w-4 h-4" /> Download
+                      <Download className="w-4 h-4" /> Baixar
                     </Button>
                     <Button size="sm" variant="outline" className="gap-2">
-                      <ExternalLink className="w-4 h-4" /> Documentation
+                      <ExternalLink className="w-4 h-4" /> Documentação
                     </Button>
                   </CardFooter>
                 </Card>
@@ -93,17 +93,17 @@ export default function Results() {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg mb-1">
-                          Optimizing Distributed Consensus Algorithms for High-Latency Networks
+                          Otimizando Algoritmos de Consenso Distribuído para Redes de Alta Latência
                         </h3>
                         <p className="text-sm text-muted-foreground mb-2">
-                          Authors: J. Doe, M. Smith, A. Johnson
+                          Autores: J. Silva, M. Souza, A. Oliveira
                         </p>
                         <p className="text-sm text-muted-foreground italic mb-3">
-                          Published in IEEE Transactions on Parallel and Distributed Systems, 2024
+                          Publicado em IEEE Transactions on Parallel and Distributed Systems, 2024
                         </p>
                         <div className="flex gap-2">
                           <Button variant="outline" size="sm" className="h-8">PDF</Button>
-                          <Button variant="ghost" size="sm" className="h-8">Cite</Button>
+                          <Button variant="ghost" size="sm" className="h-8">Citar</Button>
                         </div>
                       </div>
                     </div>

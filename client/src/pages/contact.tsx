@@ -11,14 +11,14 @@ export default function Contact() {
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Contact Us</h1>
+        <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Fale Conosco</h1>
         
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
             <p className="text-lg text-muted-foreground">
-              We are always open to new collaborations and students interested in our research. 
-              Please feel free to reach out to us using the contact information below.
+              Estamos sempre abertos a novas colaborações e estudantes interessados em nossa pesquisa.
+              Sinta-se à vontade para entrar em contato conosco usando as informações abaixo.
             </p>
             
             <div className="space-y-6">
@@ -26,12 +26,12 @@ export default function Contact() {
                 <CardContent className="pt-6 flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary shrink-0" />
                   <div>
-                    <h3 className="font-bold mb-1">Address</h3>
+                    <h3 className="font-bold mb-1">Endereço</h3>
                     <p className="text-muted-foreground">
-                      Department of Computer Science<br />
-                      University Name<br />
-                      123 Science Avenue<br />
-                      City, Country
+                      Faculdade de Computação e Informática<br />
+                      Universidade Presbiteriana Mackenzie<br />
+                      Rua da Consolação, 930<br />
+                      São Paulo - SP, Brasil
                     </p>
                   </div>
                 </CardContent>
@@ -42,7 +42,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <h3 className="font-bold mb-1">Email</h3>
-                    <p className="text-muted-foreground">contact@researchgroup.edu</p>
+                    <p className="text-muted-foreground">contato@grupodepesquisa.edu.br</p>
                   </div>
                 </CardContent>
               </Card>
@@ -51,8 +51,8 @@ export default function Contact() {
                 <CardContent className="pt-6 flex items-start gap-4">
                   <Phone className="w-6 h-6 text-primary shrink-0" />
                   <div>
-                    <h3 className="font-bold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <h3 className="font-bold mb-1">Telefone</h3>
+                    <p className="text-muted-foreground">+55 (11) 2114-8000</p>
                   </div>
                 </CardContent>
               </Card>
@@ -62,31 +62,31 @@ export default function Contact() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Send us a message</CardTitle>
+              <CardTitle>Envie-nos uma mensagem</CardTitle>
             </CardHeader>
             <CardContent>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <Input id="name" placeholder="Your name" />
+                  <label htmlFor="name" className="text-sm font-medium">Nome</label>
+                  <Input id="name" placeholder="Seu nome" />
                 </div>
                 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="Your email" />
+                  <Input id="email" type="email" placeholder="Seu email" />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                  <Input id="subject" placeholder="What is this regarding?" />
+                  <label htmlFor="subject" className="text-sm font-medium">Assunto</label>
+                  <Input id="subject" placeholder="Sobre o que gostaria de falar?" />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <Textarea id="message" placeholder="Your message here..." className="min-h-[150px]" />
+                  <label htmlFor="message" className="text-sm font-medium">Mensagem</label>
+                  <Textarea id="message" placeholder="Sua mensagem aqui..." className="min-h-[150px]" />
                 </div>
                 
-                <Button type="submit" className="w-full">Send Message</Button>
+                <Button type="submit" className="w-full">Enviar Mensagem</Button>
               </form>
             </CardContent>
           </Card>
