@@ -58,21 +58,31 @@ export default function Team() {
           
           <TabsContent value="collaborators">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-               {[1, 2, 3].map((i) => (
+               {[
+                 { name: "Colaborador Exemplo 1", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C1", lattes: "#" },
+                 { name: "Colaborador Exemplo 2", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C2", lattes: "#" },
+                 { name: "Colaborador Exemplo 3", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C3", lattes: "#" },
+               ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
                     <Avatar className="h-16 w-16">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=${i+10}`} />
-                      <AvatarFallback>CB</AvatarFallback>
+                      <AvatarImage src={`https://i.pravatar.cc/150?u=${member.name}`} />
+                      <AvatarFallback>{member.initials}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <CardTitle>Dr. Colaborador {i}</CardTitle>
-                      <CardDescription>Pesquisador Associado</CardDescription>
+                      <CardTitle className="text-lg">{member.name}</CardTitle>
+                      <CardDescription>
+                        {member.role}
+                        <br />
+                        <a href={member.lattes} className="text-primary hover:underline text-xs" target="_blank" rel="noreferrer">
+                          Currículo Lattes
+                        </a>
+                      </CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground font-semibold">
-                      Universidade Tecnológica
+                      {member.university}
                     </p>
                   </CardContent>
                 </Card>
