@@ -22,6 +22,8 @@ export default function Team() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { name: "Fellipe Silva Martins", role: "Pesquisador Principal", university: "Universidade Presbiteriana Mackenzie", initials: "FM", lattes: "#" },
+                { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP", lattes: "#" },
+                { name: "Claudio Luis Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL", lattes: "#" },
                 { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "#" },
                 { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "#" },
                 { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "#" },
