@@ -10,7 +10,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[500px] flex items-center overflow-hidden bg-[linear-gradient(90deg,hsl(var(--background))_60%,hsl(var(--primary))_100%)]">
+      <section className="relative min-h-[500px] flex items-center overflow-hidden bg-[linear-gradient(90deg,hsl(var(--background))_60%,hsl(var(--primary)/0.4)_100%)]">
         
         <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="w-full md:w-2/3">
