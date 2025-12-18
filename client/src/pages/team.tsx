@@ -12,6 +12,7 @@ import rachelImg from "@assets/rachel_1766064493446.jpeg";
 import alanImg from "@assets/allan_1766068101967.jpeg";
 import christianImg from "@assets/christian_1766070658245.jpeg";
 import carlosImg from "@assets/carlos_1766071227498.png";
+import leonardoImg from "@assets/leonardo_1766071581884.jpeg";
 
 export default function Team() {
   return (
@@ -71,6 +72,7 @@ export default function Team() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                {[
                  { name: "Christian Falaster", role: "Colaborador", university: "Universidade Regional de Blumenau - FURB", initials: "CF", lattes: "http://lattes.cnpq.br/3925148944374007", image: christianImg },
+                 { name: "Leonardo Vils", role: "Colaborador", university: "Universidade Nove de Julho", initials: "LV", lattes: "http://lattes.cnpq.br/3969955798466284", image: leonardoImg },
                ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
