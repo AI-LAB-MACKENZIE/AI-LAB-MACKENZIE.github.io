@@ -9,6 +9,7 @@ import larieiraImg from "@assets/larieira_1766064493446.png";
 import manuelImg from "@assets/manuel_1766064493445.jpeg";
 import pabloImg from "@assets/pablo_1766064493446.jpeg";
 import rachelImg from "@assets/rachel_1766064493446.jpeg";
+import alanImg from "@assets/allan_1766068101967.jpeg";
 
 export default function Team() {
   return (
@@ -32,7 +33,7 @@ export default function Team() {
                 { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP", lattes: "http://lattes.cnpq.br/8699394703578756", image: gilbertoImg },
                 { name: "Claudio Luis Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL", lattes: "http://lattes.cnpq.br/4633583409151790", image: larieiraImg },
                 { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "http://lattes.cnpq.br/7033780505958439", image: manuelImg },
-                { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "http://lattes.cnpq.br/1875943076455424", image: null },
+                { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "http://lattes.cnpq.br/1875943076455424", image: alanImg },
                 { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "http://lattes.cnpq.br/2078426148354358", image: pabloImg },
                 { name: "Rachel Horta", role: "Doutorada", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "http://lattes.cnpq.br/5403073777315194", image: rachelImg },
               ].map((member, i) => (
