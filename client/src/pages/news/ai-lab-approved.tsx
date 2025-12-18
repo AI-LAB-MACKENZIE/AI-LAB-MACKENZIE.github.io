@@ -41,7 +41,7 @@ export default function NewsArticle() {
             </p>
             
             <p className="mb-6">
-              O laboratório encontra-se em fase de implementação e formalização e está vinculado à <a href="https://www.mackenzie.br/universidade/unidades-academicas/ccsa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Escola de Negócios Mackenzie</a> e ao <a href="https://www.mackenzie.br/universidade/unidades-academicas/ccsa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Centro de Ciências Sociais Aplicadas</a>.
+              O laboratório encontra-se em fase de implementação e formalização e está vinculado à <a href="https://www.mackenzie.br/universidade/unidades-academicas/ccsa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Escola de Negócios Mackenzie / Centro de Ciências Sociais Aplicadas</a>.
             </p>
 
             <p className="mb-6">
