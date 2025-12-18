@@ -10,6 +10,7 @@ import manuelImg from "@assets/manuel_1766064493445.jpeg";
 import pabloImg from "@assets/pablo_1766064493446.jpeg";
 import rachelImg from "@assets/rachel_1766064493446.jpeg";
 import alanImg from "@assets/allan_1766068101967.jpeg";
+import christianImg from "@assets/christian_1766070658245.jpeg";
 
 export default function Team() {
   return (
@@ -67,14 +68,12 @@ export default function Team() {
           <TabsContent value="collaborators">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                {[
-                 { name: "Colaborador Exemplo 1", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C1", lattes: "#" },
-                 { name: "Colaborador Exemplo 2", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C2", lattes: "#" },
-                 { name: "Colaborador Exemplo 3", role: "Pesquisador Associado", university: "Universidade Tecnológica", initials: "C3", lattes: "#" },
+                 { name: "Christian Falaster", role: "Colaborador", university: "Universidade Regional de Blumenau - FURB", initials: "CF", lattes: "http://lattes.cnpq.br/3925148944374007", image: christianImg },
                ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
                     <Avatar className="h-16 w-16">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=${member.name}`} />
+                      <AvatarImage src={member.image} className="object-cover" />
                       <AvatarFallback>{member.initials}</AvatarFallback>
                     </Avatar>
                     <div>
