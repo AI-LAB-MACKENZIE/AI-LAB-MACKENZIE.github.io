@@ -1,7 +1,9 @@
 import { Navbar, Footer } from "@/components/layout/Navbar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import { Link } from "wouter";
+import newsImage from "@assets/image_1766065292952.png";
 
 export default function News() {
   return (
@@ -12,28 +14,34 @@ export default function News() {
         <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Últimas Notícias</h1>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <Card key={i} className="flex flex-col">
-              <div className="aspect-video bg-muted w-full object-cover rounded-t-lg flex items-center justify-center text-muted-foreground">
-                Imagem da Notícia
+          <Card className="flex flex-col hover:border-primary/50 transition-colors">
+            <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+              <img 
+                src={newsImage} 
+                alt="AI Lab Mackenzie" 
+                className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+              />
+            </div>
+            <CardHeader>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                <Calendar className="w-4 h-4" />
+                <span>18 de Dezembro de 2024</span>
               </div>
-              <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{10 + i} de Dezembro de 2024</span>
-                </div>
-                <CardTitle className="line-clamp-2">Grupo de Pesquisa Ganha Prêmio Internacional de Inovação</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground line-clamp-3">
-                  Nossa equipe foi reconhecida na Conferência Internacional de Ciência por nosso trabalho inovador em sistemas distribuídos...
-                </p>
-              </CardContent>
-              <CardFooter>
+              <CardTitle className="line-clamp-3 text-lg">
+                Laboratório de IA para Estratégia e Tomada de Decisão é aprovado para funcionamento com Fundo de fomento Mackpesquisa
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <p className="text-muted-foreground line-clamp-3 text-sm">
+                A Universidade Presbiteriana Mackenzie aprovou o projeto de criação do AI Lab Mackenzie, com fomento integral do Fundo Mackenzie de Pesquisa, MACKPESQUISA.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Link href="/news/ai-lab-approved" className="w-full">
                 <Button variant="outline" className="w-full">Ler Mais</Button>
-              </CardFooter>
-            </Card>
-          ))}
+              </Link>
+            </CardFooter>
+          </Card>
         </div>
       </main>
 

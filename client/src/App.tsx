@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Team from "@/pages/team";
 import News from "@/pages/news";
+import NewsArticle from "@/pages/news/ai-lab-approved";
 import Results from "@/pages/results";
 import Contact from "@/pages/contact";
 import Repos from "@/pages/repos";
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/team" component={Team} />
       <Route path="/news" component={News} />
+      <Route path="/news/ai-lab-approved" component={NewsArticle} />
       <Route path="/results" component={Results} />
       <Route path="/contact" component={Contact} />
       <Route path="/repos" component={Repos} />
