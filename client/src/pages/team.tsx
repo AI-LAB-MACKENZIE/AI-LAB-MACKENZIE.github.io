@@ -11,6 +11,7 @@ import pabloImg from "@assets/pablo_1766064493446.jpeg";
 import rachelImg from "@assets/rachel_1766064493446.jpeg";
 import alanImg from "@assets/allan_1766068101967.jpeg";
 import christianImg from "@assets/christian_1766070658245.jpeg";
+import carlosImg from "@assets/carlos_1766071227498.png";
 
 export default function Team() {
   return (
@@ -35,8 +36,9 @@ export default function Team() {
                 { name: "Claudio Luis Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL", lattes: "http://lattes.cnpq.br/4633583409151790", image: larieiraImg },
                 { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "http://lattes.cnpq.br/7033780505958439", image: manuelImg },
                 { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "http://lattes.cnpq.br/1875943076455424", image: alanImg },
+                { name: "Carlos Eduardo Pereira", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "CP", lattes: "http://lattes.cnpq.br/7671652178451088", image: carlosImg },
                 { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "http://lattes.cnpq.br/2078426148354358", image: pabloImg },
-                { name: "Rachel Horta", role: "Doutorada", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "http://lattes.cnpq.br/5403073777315194", image: rachelImg },
+                { name: "Rachel Horta", role: "Doutoranda", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "http://lattes.cnpq.br/5403073777315194", image: rachelImg },
               ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
