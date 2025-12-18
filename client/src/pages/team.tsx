@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import fellipeImg from "@assets/fellipe_1766064493446.png";
+import fellipeImg from "@assets/fellipe_edited_1766072363215.jpg";
 import gilbertoImg from "@assets/gilberto_1766064493446.png";
 import larieiraImg from "@assets/larieira_1766064493446.png";
 import manuelImg from "@assets/manuel_1766064493445.jpeg";
