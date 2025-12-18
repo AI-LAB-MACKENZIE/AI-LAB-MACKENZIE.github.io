@@ -3,6 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+import fellipeImg from "@assets/fellipe_1766064493446.png";
+import gilbertoImg from "@assets/gilberto_1766064493446.png";
+import larieiraImg from "@assets/larieira_1766064493446.png";
+import manuelImg from "@assets/manuel_1766064493445.jpeg";
+import pabloImg from "@assets/pablo_1766064493446.jpeg";
+import rachelImg from "@assets/rachel_1766064493446.jpeg";
+
 export default function Team() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -21,18 +28,18 @@ export default function Team() {
           <TabsContent value="project-team" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Fellipe Silva Martins", role: "Pesquisador Principal", university: "Universidade Presbiteriana Mackenzie", initials: "FM", lattes: "#" },
-                { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP", lattes: "#" },
-                { name: "Claudio Luis Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL", lattes: "#" },
-                { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "#" },
-                { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "#" },
-                { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "#" },
-                { name: "Rachel Horta", role: "Doutorada", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "#" },
+                { name: "Fellipe Silva Martins", role: "Pesquisador Principal", university: "Universidade Presbiteriana Mackenzie", initials: "FM", lattes: "http://lattes.cnpq.br/7912881403948084", image: fellipeImg },
+                { name: "Gilberto Perez", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "GP", lattes: "http://lattes.cnpq.br/8699394703578756", image: gilbertoImg },
+                { name: "Claudio Luis Carvalho Larieira", role: "Pesquisador Associado", university: "Universidade Presbiteriana Mackenzie", initials: "CL", lattes: "http://lattes.cnpq.br/4633583409151790", image: larieiraImg },
+                { name: "Manuel Anibal Silva Portugal Vasconcelos Ferreira", role: "Pesquisador Associado", university: "Instituto Politécnico de Leiria, Portugal", initials: "MF", lattes: "http://lattes.cnpq.br/7033780505958439", image: manuelImg },
+                { name: "Alan Souza Lima", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "AL", lattes: "http://lattes.cnpq.br/1875943076455424", image: null },
+                { name: "Pablo Turbuk Garrán", role: "Doutorando", university: "Universidade Presbiteriana Mackenzie", initials: "PG", lattes: "http://lattes.cnpq.br/2078426148354358", image: pabloImg },
+                { name: "Rachel Horta", role: "Doutorada", university: "Universidade Presbiteriana Mackenzie", initials: "RH", lattes: "http://lattes.cnpq.br/5403073777315194", image: rachelImg },
               ].map((member, i) => (
                 <Card key={i}>
                   <CardHeader className="flex flex-row items-center gap-4">
                     <Avatar className="h-16 w-16">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=${member.name}`} />
+                      <AvatarImage src={member.image || ""} className="object-cover" />
                       <AvatarFallback>{member.initials}</AvatarFallback>
                     </Avatar>
                     <div>
