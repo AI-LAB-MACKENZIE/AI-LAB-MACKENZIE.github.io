@@ -37,15 +37,15 @@ export default function NewsArticle() {
 
           <div className="prose prose-lg max-w-none text-muted-foreground">
             <p className="mb-6">
-              A Universidade Presbiteriana Mackenzie aprovou o projeto de criação do AI Lab Mackenzie, com fomento integral do Fundo Mackenzie de Pesquisa, MACKPESQUISA.
+              A <a href="https://www.mackenzie.br/" target="_blank" rel="noreferrer" className="text-primary hover:underline">Universidade Presbiteriana Mackenzie</a> aprovou o projeto de criação do AI Lab Mackenzie, com fomento integral do <a href="https://www.mackenzie.br/mackpesquisa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Fundo Mackenzie de Pesquisa, MACKPESQUISA</a>.
             </p>
             
             <p className="mb-6">
-              O laboratório encontra-se em fase de implementação e formalização e está vinculado à Escola de Negócios Mackenzie e ao Centro de Ciências Sociais Aplicadas.
+              O laboratório encontra-se em fase de implementação e formalização e está vinculado à <a href="https://www.mackenzie.br/universidade/unidades-academicas/ccsa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Escola de Negócios Mackenzie</a> e ao <a href="https://www.mackenzie.br/universidade/unidades-academicas/ccsa" target="_blank" rel="noreferrer" className="text-primary hover:underline">Centro de Ciências Sociais Aplicadas</a>.
             </p>
 
             <p className="mb-6">
-              A iniciativa reúne uma equipe de pesquisadores formada por professores e estudantes da Universidade Presbiteriana Mackenzie, além de colaboradores de outras instituições, com foco em pesquisa aplicada em Inteligência Artificial no campo da gestão e da estratégia.
+              A iniciativa reúne uma equipe de pesquisadores formada por professores e estudantes da <a href="https://www.mackenzie.br/" target="_blank" rel="noreferrer" className="text-primary hover:underline">Universidade Presbiteriana Mackenzie</a>, além de colaboradores de outras instituições, com foco em pesquisa aplicada em Inteligência Artificial no campo da gestão e da estratégia.
             </p>
 
             <div className="bg-muted/30 p-6 rounded-lg flex items-start gap-4 mt-8 border border-border">

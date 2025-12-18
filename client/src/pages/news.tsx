@@ -33,7 +33,7 @@ export default function News() {
             </CardHeader>
             <CardContent className="flex-grow">
               <p className="text-muted-foreground line-clamp-3 text-sm">
-                A Universidade Presbiteriana Mackenzie aprovou o projeto de criação do AI Lab Mackenzie, com fomento integral do Fundo Mackenzie de Pesquisa, MACKPESQUISA.
+                A <a href="https://www.mackenzie.br/" target="_blank" rel="noreferrer" className="hover:underline text-primary">Universidade Presbiteriana Mackenzie</a> aprovou o projeto de criação do AI Lab Mackenzie, com fomento integral do <a href="https://www.mackenzie.br/mackpesquisa" target="_blank" rel="noreferrer" className="hover:underline text-primary">Fundo Mackenzie de Pesquisa, MACKPESQUISA</a>.
               </p>
             </CardContent>
             <CardFooter>

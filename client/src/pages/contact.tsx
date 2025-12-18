@@ -29,7 +29,7 @@ export default function Contact() {
                     <h3 className="font-bold mb-1">Endereço</h3>
                     <p className="text-muted-foreground">
                       Faculdade de Computação e Informática<br />
-                      Universidade Presbiteriana Mackenzie<br />
+                      <a href="https://www.mackenzie.br/" target="_blank" rel="noreferrer" className="hover:underline">Universidade Presbiteriana Mackenzie</a><br />
                       Rua da Consolação, 930<br />
                       São Paulo - SP, Brasil
                     </p>
