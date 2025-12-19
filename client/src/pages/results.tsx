@@ -22,7 +22,7 @@ export default function Results() {
           
           <TabsContent value="projects" className="space-y-6">
              <div className="grid gap-6">
-              {[1, 2].map((i) => (
+              {[1].map((i) => (
                 <Card key={i}>
                   <CardHeader>
                     <div className="flex justify-between items-start">
@@ -55,7 +55,7 @@ export default function Results() {
           
           <TabsContent value="software">
              <div className="grid md:grid-cols-2 gap-6">
-              {[1, 2, 3].map((i) => (
+              {[1].map((i) => (
                 <Card key={i}>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function Results() {
           
           <TabsContent value="papers">
             <div className="space-y-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[1].map((i) => (
                 <Card key={i}>
                   <CardContent className="pt-6">
                     <div className="flex gap-4 items-start">
