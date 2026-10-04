@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { Link } from "wouter";
 import newsImage from "@assets/image_1766065292952.png";
+import article1Image from "@assets/SCR-20260410-mu7_1775851046669.png";
+import article2Image from "@assets/SCR-20260410-mud_1775851046670.png";
 
 export default function News() {
   return (
@@ -14,6 +16,35 @@ export default function News() {
         <h1 className="text-4xl font-bold font-serif mb-8 text-primary">Últimas Notícias</h1>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="flex flex-col hover:border-primary/50 transition-colors">
+            <div className="aspect-video w-full overflow-hidden rounded-t-lg bg-muted flex items-center justify-center">
+              <img 
+                src={article1Image} 
+                alt="Aceite ANPAD" 
+                className="w-full h-full object-contain bg-white transition-transform hover:scale-105 duration-500"
+              />
+            </div>
+            <CardHeader>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                <Calendar className="w-4 h-4" />
+                <span>10 de Abril de 2026</span>
+              </div>
+              <CardTitle className="line-clamp-3 text-lg">
+                Primeiros artigos do Laboratório de IA + Estratégia aceitos na ANPAD
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <p className="text-muted-foreground line-clamp-3 text-sm">
+                Os primeiros artigos realizados com apoio do Laboratório de IA + Estratégia foram aceitos nos eventos divisionais 3Es e EnATI da ANPAD.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Link href="/news/anpad-articles" className="w-full">
+                <Button variant="outline" className="w-full">Ler Mais</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
           <Card className="flex flex-col hover:border-primary/50 transition-colors">
             <div className="aspect-video w-full overflow-hidden rounded-t-lg">
               <img 

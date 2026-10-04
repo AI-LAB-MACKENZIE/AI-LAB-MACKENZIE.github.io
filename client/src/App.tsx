@@ -11,6 +11,7 @@ import Home from "@/pages/home";
 import Team from "@/pages/team";
 import News from "@/pages/news";
 import NewsArticle from "@/pages/news/ai-lab-approved";
+import NewsArticle2 from "@/pages/news-article-2";
 import Results from "@/pages/results";
 import Contact from "@/pages/contact";
 import Repos from "@/pages/repos";
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/team" component={Team} />
         <Route path="/news" component={News} />
         <Route path="/news/ai-lab-approved" component={NewsArticle} />
+        <Route path="/news/anpad-articles" component={NewsArticle2} />
         <Route path="/results" component={Results} />
         <Route path="/contact" component={Contact} />
         <Route path="/repos" component={Repos} />
