@@ -20,7 +20,7 @@ export default function NewsArticle() {
           <div className="mb-8">
             <div className="flex items-center gap-2 text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
-              <span>18 de Dezembro de 2024</span>
+              <span>18 de Junho de 2024</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold font-serif text-primary leading-tight mb-6">
               Laboratório de IA para Estratégia e Tomada de Decisão é aprovado para funcionamento com Fundo de fomento Mackpesquisa

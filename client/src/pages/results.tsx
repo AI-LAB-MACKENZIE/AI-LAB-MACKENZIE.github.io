@@ -5,6 +5,31 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Download, FileText, Code } from "lucide-react";
 
+// Para publicar um item, adicione um objeto à lista correspondente.
+// Exemplo de projeto:
+// { title: "Projeto Alpha", funding: "Financiado por ...", status: "Em Andamento",
+//   description: "...", tags: ["Big Data"], url: "https://..." }
+type Project = { title: string; funding: string; status: string; description: string; tags: string[]; url?: string };
+const projects: Project[] = [];
+
+// Exemplo de software:
+// { name: "FerramentaDeAnalise v2.0", subtitle: "...", description: "...", downloadUrl: "https://...", docsUrl: "https://..." }
+type Software = { name: string; subtitle: string; description: string; downloadUrl?: string; docsUrl?: string };
+const software: Software[] = [];
+
+// Exemplo de publicação:
+// { title: "...", authors: "F. Martins, ...", venue: "Publicado em ..., 2026", pdfUrl: "https://..." }
+type Paper = { title: string; authors: string; venue: string; pdfUrl?: string };
+const papers: Paper[] = [];
+
+function EmptyState({ text }: { text: string }) {
+  return (
+    <div className="border border-dashed rounded-lg py-16 text-center text-muted-foreground">
+      {text}
+    </div>
+  );
+}
+
 export default function Results() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -21,96 +46,111 @@ export default function Results() {
           </TabsList>
           
           <TabsContent value="projects" className="space-y-6">
-             <div className="grid gap-6">
-              {[1].map((i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="text-xl mb-2">Projeto Alpha: Análise Avançada de Dados</CardTitle>
-                        <CardDescription>Financiado pelo Conselho Nacional de Desenvolvimento Científico</CardDescription>
+            {projects.length === 0 ? (
+              <EmptyState text="Projetos em breve." />
+            ) : (
+              <div className="grid gap-6">
+                {projects.map((project, i) => (
+                  <Card key={i}>
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+                          <CardDescription>{project.funding}</CardDescription>
+                        </div>
+                        <Badge variant="secondary">{project.status}</Badge>
                       </div>
-                      <Badge variant="secondary">Em Andamento</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Este projeto visa desenvolver novas metodologias para análise de grandes conjuntos de dados em ambientes de tempo real.
-                      Estamos investigando novos algoritmos que reduzem a complexidade computacional mantendo a precisão.
-                    </p>
-                    <div className="flex gap-2">
-                      <Badge variant="outline">Big Data</Badge>
-                      <Badge variant="outline">Machine Learning</Badge>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="outline" size="sm" className="gap-2">
-                      <ExternalLink className="w-4 h-4" /> Ver Detalhes
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{project.description}</p>
+                      <div className="flex gap-2">
+                        {project.tags.map((tag) => (
+                          <Badge key={tag} variant="outline">{tag}</Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    {project.url && (
+                      <CardFooter>
+                        <a href={project.url} target="_blank" rel="noreferrer">
+                          <Button variant="outline" size="sm" className="gap-2">
+                            <ExternalLink className="w-4 h-4" /> Ver Detalhes
+                          </Button>
+                        </a>
+                      </CardFooter>
+                    )}
+                  </Card>
+                ))}
+              </div>
+            )}
           </TabsContent>
           
           <TabsContent value="software">
-             <div className="grid md:grid-cols-2 gap-6">
-              {[1].map((i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Code className="w-5 h-5 text-primary" />
-                      FerramentaDeAnalise v2.0
-                    </CardTitle>
-                    <CardDescription>Biblioteca de Visualização de Dados Open Source</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Uma biblioteca abrangente para visualizar estruturas de rede complexas. Construída com React e D3.
-                    </p>
-                  </CardContent>
-                  <CardFooter className="flex gap-2">
-                    <Button size="sm" className="gap-2">
-                      <Download className="w-4 h-4" /> Baixar
-                    </Button>
-                    <Button size="sm" variant="outline" className="gap-2">
-                      <ExternalLink className="w-4 h-4" /> Documentação
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+            {software.length === 0 ? (
+              <EmptyState text="Software e aplicativos em breve." />
+            ) : (
+              <div className="grid md:grid-cols-2 gap-6">
+                {software.map((item, i) => (
+                  <Card key={i}>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Code className="w-5 h-5 text-primary" />
+                        {item.name}
+                      </CardTitle>
+                      <CardDescription>{item.subtitle}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+                    </CardContent>
+                    <CardFooter className="flex gap-2">
+                      {item.downloadUrl && (
+                        <a href={item.downloadUrl} target="_blank" rel="noreferrer">
+                          <Button size="sm" className="gap-2">
+                            <Download className="w-4 h-4" /> Baixar
+                          </Button>
+                        </a>
+                      )}
+                      {item.docsUrl && (
+                        <a href={item.docsUrl} target="_blank" rel="noreferrer">
+                          <Button size="sm" variant="outline" className="gap-2">
+                            <ExternalLink className="w-4 h-4" /> Documentação
+                          </Button>
+                        </a>
+                      )}
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            )}
           </TabsContent>
           
           <TabsContent value="papers">
-            <div className="space-y-4">
-              {[1].map((i) => (
-                <Card key={i}>
-                  <CardContent className="pt-6">
-                    <div className="flex gap-4 items-start">
-                      <div className="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
-                        <FileText className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg mb-1">
-                          Otimizando Algoritmos de Consenso Distribuído para Redes de Alta Latência
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-2">
-                          Autores: J. Silva, M. Souza, A. Oliveira
-                        </p>
-                        <p className="text-sm text-muted-foreground italic mb-3">
-                          Publicado em IEEE Transactions on Parallel and Distributed Systems, 2024
-                        </p>
-                        <div className="flex gap-2">
-                          <Button variant="outline" size="sm" className="h-8">PDF</Button>
-                          <Button variant="ghost" size="sm" className="h-8">Citar</Button>
+            {papers.length === 0 ? (
+              <EmptyState text="Publicações em breve." />
+            ) : (
+              <div className="space-y-4">
+                {papers.map((paper, i) => (
+                  <Card key={i}>
+                    <CardContent className="pt-6">
+                      <div className="flex gap-4 items-start">
+                        <div className="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                          <FileText className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg mb-1">{paper.title}</h3>
+                          <p className="text-sm text-muted-foreground mb-2">Autores: {paper.authors}</p>
+                          <p className="text-sm text-muted-foreground italic mb-3">{paper.venue}</p>
+                          {paper.pdfUrl && (
+                            <a href={paper.pdfUrl} target="_blank" rel="noreferrer">
+                              <Button variant="outline" size="sm" className="h-8">PDF</Button>
+                            </a>
+                          )}
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
           </TabsContent>
         </Tabs>
       </main>

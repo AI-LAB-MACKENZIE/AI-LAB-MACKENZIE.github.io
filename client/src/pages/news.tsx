@@ -56,7 +56,7 @@ export default function News() {
             <CardHeader>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                 <Calendar className="w-4 h-4" />
-                <span>18 de Dezembro de 2024</span>
+                <span>18 de Junho de 2024</span>
               </div>
               <CardTitle className="line-clamp-3 text-lg">
                 Laboratório de IA para Estratégia e Tomada de Decisão é aprovado para funcionamento com Fundo de fomento Mackpesquisa

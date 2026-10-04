@@ -1,8 +1,14 @@
 import { Navbar, Footer } from "@/components/layout/Navbar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Star, GitFork } from "lucide-react";
+import { Github } from "lucide-react";
+
+// Para publicar um repositório, adicione um objeto à lista. Exemplo:
+// { name: "AI-LAB-MACKENZIE/nome-do-repo", description: "...",
+//   languages: ["Python"], url: "https://github.com/AI-LAB-MACKENZIE/nome-do-repo", isPublic: true }
+type Repo = { name: string; description: string; languages: string[]; url: string; isPublic: boolean };
+const repos: Repo[] = [];
 
 export default function Repos() {
   return (
@@ -15,43 +21,43 @@ export default function Repos() {
           Repositórios GitHub
         </h1>
         
-        <div className="grid md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <Card key={i} className="hover:border-primary/50 transition-colors cursor-pointer">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-xl text-primary font-mono">grupo-pesquisa/projeto-{i}</CardTitle>
-                  <Badge variant="outline">Público</Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Uma implementação de alto desempenho do algoritmo proposto para agrupamento de dados em redes distribuídas.
-                </p>
-                <div className="flex gap-2 mb-4">
-                  <Badge variant="secondary" className="text-xs">Python</Badge>
-                  <Badge variant="secondary" className="text-xs">TensorFlow</Badge>
-                </div>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4" />
-                    <span>{12 * i}</span>
+        {repos.length === 0 ? (
+          <div className="border border-dashed rounded-lg py-16 text-center text-muted-foreground">
+            Repositórios em breve. Acompanhe em{" "}
+            <a href="https://github.com/AI-LAB-MACKENZIE" target="_blank" rel="noreferrer" className="text-primary hover:underline">
+              github.com/AI-LAB-MACKENZIE
+            </a>
+            .
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            {repos.map((repo) => (
+              <Card key={repo.name} className="hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-xl text-primary font-mono">{repo.name}</CardTitle>
+                    <Badge variant="outline">{repo.isPublic ? "Público" : "Privado"}</Badge>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <GitFork className="w-4 h-4" />
-                    <span>{3 * i}</span>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">{repo.description}</p>
+                  <div className="flex gap-2">
+                    {repo.languages.map((lang) => (
+                      <Badge key={lang} variant="secondary" className="text-xs">{lang}</Badge>
+                    ))}
                   </div>
-                  <div className="text-xs">Atualizado há 2 dias</div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                 <Button variant="outline" className="w-full gap-2">
-                   <Github className="w-4 h-4" /> Ver Código
-                 </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+                </CardContent>
+                <CardFooter>
+                  <a href={repo.url} target="_blank" rel="noreferrer" className="w-full">
+                    <Button variant="outline" className="w-full gap-2">
+                      <Github className="w-4 h-4" /> Ver Código
+                    </Button>
+                  </a>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        )}
       </main>
 
       <Footer />
