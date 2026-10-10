@@ -10,7 +10,17 @@ import { ExternalLink, Download, FileText, Code } from "lucide-react";
 // { title: "Projeto Alpha", funding: "Financiado por ...", status: "Em Andamento",
 //   description: "...", tags: ["Big Data"], url: "https://..." }
 type Project = { title: string; funding: string; status: string; description: string; tags: string[]; url?: string };
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    title: "PPGA Interativo",
+    funding: "Iniciativa do PPGA e da Escola de Negócios da Universidade Presbiteriana Mackenzie",
+    status: "Em Andamento",
+    description:
+      "Projeto de divulgação científica que usa inteligência artificial para transformar teses e dissertações do Programa de Pós-Graduação em Administração em apresentações interativas, em linguagem simples, aproximando os resultados das pesquisas de gestores, empresas, estudantes e da sociedade.",
+    tags: ["Divulgação científica", "IA generativa", "Teses e dissertações"],
+    url: "https://ailabmack.github.io/ppga-interativo/",
+  },
+];
 
 // Exemplo de software:
 // { name: "FerramentaDeAnalise v2.0", subtitle: "...", description: "...", downloadUrl: "https://...", docsUrl: "https://..." }
@@ -63,7 +73,7 @@ export default function Results() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">{project.description}</p>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="outline">{tag}</Badge>
                         ))}
