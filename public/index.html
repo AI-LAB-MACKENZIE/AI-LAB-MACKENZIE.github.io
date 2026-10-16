@@ -164,6 +164,7 @@
     '#/news/ai-lab-approved': 'noticia-aprovacao.html', '#/results': 'projetos.html', '#/contact': 'contato.html',
     '#/repos': 'repositorios.html', '#/': 'index.html' };
   if (OLD[location.hash]) { location.replace(OLD[location.hash]); return; }
+  const hash0 = location.hash;   // âncora com que a página foi aberta (antes de qualquer mudança)
 
   const hdr = document.getElementById('hdr');
   const hero = document.querySelector('.hero, .page-hero');
@@ -192,24 +193,25 @@
     const select = (i, fromClick) => {
       tabs.forEach((a, k) => { a.classList.toggle('on', k === i); a.setAttribute('aria-selected', k === i); });
       panels.forEach((p, k) => { p.hidden = k !== i; });
+      if (!fromClick) return;     // ao abrir a página: só mostra a aba, sem mexer no endereço nem rolar
       history.replaceState(null, '', tabs[i].getAttribute('href'));
       const top = bar.getBoundingClientRect().top + scrollY - 70;
-      if (fromClick && scrollY > top) scrollTo({ top, behavior: 'instant' });
+      if (scrollY > top) scrollTo({ top, behavior: 'instant' });
     };
     tabs.forEach((a, i) => {
       a.setAttribute('role', 'tab');
       a.addEventListener('click', e => { e.preventDefault(); select(i, true); });
     });
-    const start = Math.max(0, tabs.findIndex(a => a.getAttribute('href') === location.hash));
+    const start = Math.max(0, tabs.findIndex(a => a.getAttribute('href') === hash0));
     select(start, false);
-    if (location.hash && tabs[start].getAttribute('href') === location.hash) {
+    if (hash0 && tabs[start].getAttribute('href') === hash0) {
       tabbed = true;
       addEventListener('load', () => setTimeout(() => scrollTo({ top: bar.getBoundingClientRect().top + scrollY - 70, behavior: 'instant' }), 60));
     }
   }
 
   addEventListener('load', () => {
-    const t = !tabbed && location.hash && document.querySelector(location.hash);
+    const t = !tabbed && hash0 && document.querySelector(hash0);
     if (t) setTimeout(() => t.scrollIntoView(), 60);
   });
 })();
