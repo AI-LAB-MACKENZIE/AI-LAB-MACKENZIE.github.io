@@ -366,3 +366,11 @@ footer a.sig:hover svg { color: var(--red); }
   .proj-cta { padding: 28px 22px; }
 }
 .proj-end { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+/* Página de projeto: coluna 50% mais larga que a dos artigos */
+.proj-page .narrow { max-width: 1290px; }
+.proj-page .people.proj-people { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 960px) { .proj-page .people.proj-people { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .proj-page .people.proj-people { grid-template-columns: repeat(2, 1fr); } }
+/* Página de projeto: topo 1/3 mais baixo, texto alinhado à coluna */
+.page-hero.proj-hero { height: 39vh; min-height: 300px; }
+.page-hero.proj-hero .wrap { max-width: 1290px; padding-bottom: 36px; }
