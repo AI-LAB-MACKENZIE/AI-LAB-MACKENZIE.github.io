@@ -1,7 +1,7 @@
 (() => {
   // Links do site antigo (rotas com #/...) levam à página nova correspondente.
   const OLD = { '#/team': 'equipe.html', '#/news': 'noticias.html', '#/news/anpad-articles': 'noticia-anpad.html',
-    '#/news/ai-lab-approved': 'noticia-aprovacao.html', '#/results': 'projetos.html', '#/contact': 'contato.html',
+    '#/news/ai-lab-approved': 'noticia-aprovacao.html', '#/results': 'producoes.html', '#/contact': 'contato.html',
     '#/repos': 'repositorios.html', '#/': 'index.html' };
   if (OLD[location.hash]) { location.replace(OLD[location.hash]); return; }
   const hash0 = location.hash;   // âncora com que a página foi aberta (antes de qualquer mudança)

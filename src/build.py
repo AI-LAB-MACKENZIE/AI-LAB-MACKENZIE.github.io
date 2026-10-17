@@ -9,14 +9,16 @@ SRC = pathlib.Path(__file__).resolve().parent
 OUT = SRC.parent / "public"
 M = (OUT / "m-symbol.svg").read_text().replace("<svg ", '<svg aria-hidden="true" ', 1)
 
-NAV = [("index.html", "Home"), ("pesquisa.html", "Pesquisa"), ("projetos.html", "Projetos"),
+NAV = [("index.html", "Home"), ("pesquisa.html", "Pesquisa"), ("producoes.html", "Produções"),
        ("noticias.html", "Notícias"), ("equipe.html", "Equipe"), ("contato.html", "Contato")]
 
-# Regra: toda menção à Universidade, ao Centro e ao PPGA leva ao respectivo site.
+# Regra: toda menção à Universidade, ao Centro (Escola de Negócios) e ao PPGA leva ao respectivo site.
 # Os nomes mais longos vêm primeiro; "Programa de Pós-Graduação em Ciência da Informação" (USP) não casa.
 PPGA = "https://www.mackenzie.br/pos-graduacao/mestrado-doutorado/sao-paulo-higienopolis/administracao-de-empresas"
 INST = [("Universidade Presbiteriana Mackenzie", "https://www.mackenzie.br/"),
         ("Centro de Ciências Sociais e Aplicadas", "https://www.mackenzie.br/universidade/unidades-academicas/ccsa"),
+        ("Escola de Negócios Mackenzie", "https://www.mackenzie.br/universidade/unidades-academicas/ccsa"),
+        ("Escola de Negócios", "https://www.mackenzie.br/universidade/unidades-academicas/ccsa"),   # = CCSA
         ("Programa de Pós-Graduação em Administração de Empresas", PPGA),
         ("Programa de Pós-Graduação em Administração", PPGA),
         ("Programa de Mestrado e Doutorado em Administração", PPGA)]
