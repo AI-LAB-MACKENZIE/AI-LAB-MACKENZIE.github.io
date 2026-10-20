@@ -374,3 +374,12 @@ footer a.sig:hover svg { color: var(--red); }
 /* Página de projeto: topo 1/3 mais baixo, texto alinhado à coluna */
 .page-hero.proj-hero { height: 39vh; min-height: 300px; }
 .page-hero.proj-hero .wrap { max-width: 1290px; padding-bottom: 36px; }
+
+/* News page as a list: image left, text right, newest first */
+.news.list { grid-template-columns: 1fr; gap: 56px; max-width: 1080px; }
+.news.list article a { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 40px; align-items: center; }
+.news.list .img { margin-bottom: 0; }
+.news.list h3 { margin-top: 8px; }
+@media (max-width: 640px) {
+  .news.list article a { grid-template-columns: 1fr; gap: 18px; }
+}
