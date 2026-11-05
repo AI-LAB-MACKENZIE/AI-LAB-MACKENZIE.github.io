@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- active: producoes.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAHP-L · Laboratório de IA + Estratégia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+{{HEADER}}
+
+<section class="page-hero proj-hero on-photo">
+  <img src="img/fotos/campus-predio-historico.jpg" alt="Prédio histórico do campus Higienópolis da Universidade Presbiteriana Mackenzie">
+  <div class="wrap">
+    <p class="eyebrow">Software · Código aberto</p>
+    <h1><strong>FAHP-L</strong></h1>
+    <p class="lead">Um aplicativo de Fuzzy AHP que leva em conta o nível hierárquico de quem participa da decisão.</p>
+  </div>
+</section>
+
+<article class="article proj-page">
+  <div class="wrap narrow">
+    <a href="producoes.html#software" class="back">← Voltar para produções</a>
+    <div class="proj-cta">
+      <div>
+        <p class="eyebrow">Acesse</p>
+        <h2>Baixe o <strong>FAHP-L</strong> no GitHub</h2>
+      </div>
+      <a href="https://github.com/fellipemartins/Enhanced-Fuzzy-AHP-Calculator" target="_blank" rel="noreferrer" class="btn-red">Abrir o repositório ↗</a>
+    </div>
+    <div class="prose">
+      <h2 class="art-h">O projeto</h2>
+      <p>Escolher um fornecedor, priorizar projetos, decidir onde investir: decisões estratégicas envolvem vários critérios ao mesmo tempo e dependem do julgamento de pessoas. O Fuzzy AHP é um dos métodos mais usados para organizar esse tipo de escolha. Os critérios e as alternativas são comparados dois a dois, e os julgamentos, que nunca são exatos, são tratados com números fuzzy, próprios para lidar com a imprecisão de respostas como "um pouco mais importante" ou "muito mais importante".</p>
+      <p>O método tradicional, porém, trata todas as respostas como se valessem o mesmo. Num estudo com diretores, gerentes e equipes operacionais, a opinião de quem conhece a estratégia da organização tem o mesmo peso de quem a vê de longe. Quando há poucos especialistas e muitos respondentes de nível operacional, o resultado pode se distorcer.</p>
+      <p>O FAHP-L (L de <em>level</em>, nível) resolve esse problema. Cada respondente é identificado como estratégico, tático ou operacional. As respostas do nível estratégico servem de referência, e as dos níveis tático e operacional são ajustadas de forma proporcional conforme se aproximam ou se afastam dessa referência. O aplicativo entrega dois resultados lado a lado: o do Fuzzy AHP tradicional e o ajustado por nível. Assim o pesquisador vê não só qual opção ganhou, mas também de quem são as opiniões que pesaram.</p>
+      <p>O ajuste nasceu na prática. Ele já havia sido feito à mão em estudos publicados sobre resistência à mudança na implantação de tecnologia da informação, terceirização no setor público e decisões no agronegócio. Fazer isso em planilhas era demorado e sujeito a erro. O aplicativo também nasceu da sala de aula: numa disciplina de análise de decisão multicritério da pós-graduação em Administração, os alunos aprendem os métodos fazendo as contas à mão, e depois de dominar a lógica precisam de uma ferramenta que faça os cálculos com segurança nas suas dissertações e teses.</p>
+      <p>O aplicativo foi apresentado como Produto Técnico-Tecnológico (PTT) no <a href="noticia-enanpad-2025.html">EnANPAD 2025</a>, com o trabalho <em>FAHP-L: A Level-Adjusted Fuzzy AHP App for Strategic Decision Modeling in Management Research</em>, publicado nos anais da ANPAD.</p>
+    </div>
+    <div class="fit">
+      <a href="pesquisa.html#decisao"><span class="n">01</span><h3>Tomada de decisão</h3><p>Modela decisões estratégicas com vários critérios e alternativas, tratando a imprecisão dos julgamentos humanos.</p></a>
+      <a href="pesquisa.html#estrategia"><span class="n">02</span><h3>Estratégia</h3><p>Reconhece que a hierarquia importa: quem está no nível estratégico tem uma visão da decisão que os outros níveis não têm.</p></a>
+      <a href="pesquisa.html#inovacao"><span class="n">03</span><h3>Ensino e pesquisa</h3><p>Transforma num aplicativo um cálculo que antes era manual, para alunos, pesquisadores e gestores, sem precisar programar.</p></a>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <figure class="proj-shot"><img src="img/fahpl-interface.jpg" alt="Tela inicial do FAHP-L, com campos para número de critérios, alternativas e respondentes e o nível de cada respondente"><figcaption>A tela inicial: o usuário define os critérios, as alternativas e os respondentes, e indica o nível hierárquico de cada um. No painel lateral, um resumo do método e da escala de comparação.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/fahpl-comparacoes.jpg" alt="Comparações par a par entre os critérios Custo, Complexidade e Risco, com botões e controles deslizantes de 2 a 9"><figcaption>As comparações par a par: para cada dupla de critérios, o respondente diz se são igualmente importantes ou qual pesa mais, e quanto, numa escala de 2 a 9.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/fahpl-transitividade.jpg" alt="Avisos amarelos de violação de transitividade, como: se Custo é mais importante que Complexidade e Complexidade mais que Risco, Custo deveria ser mais importante que Risco"><figcaption>A checagem de coerência: se alguém diz que Custo pesa mais que Complexidade, e Complexidade mais que Risco, mas Risco mais que Custo, o aplicativo aponta a contradição. Os avisos vêm em verde, amarelo ou vermelho, conforme a gravidade, e erros graves impedem de seguir.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/fahpl-criterios.jpg" alt="Tabelas com os pesos dos critérios no Fuzzy AHP tradicional e no ajustado por nível"><figcaption>Os pesos dos critérios nos dois modelos. Neste exemplo, o Risco continua em primeiro, mas a ordem entre Custo e Complexidade se inverte quando o nível dos respondentes entra na conta.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/fahpl-graficos.jpg" alt="Gráficos de barras com os pesos agregados e individuais dos critérios, no modelo tradicional e no ajustado"><figcaption>Gráficos dos pesos agregados e da contribuição de cada respondente e de cada nível hierárquico.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/fahpl-alternativas.jpg" alt="Tabelas e gráficos com o ranking final de três projetos nos dois modelos"><figcaption>O ranking final das alternativas, também nos dois modelos, pronto para exportar para o Excel.</figcaption></figure>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Como se usa</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Critérios e alternativas</b><p>O usuário define até 10 critérios e até 10 alternativas. Se não houver alternativas, o aplicativo calcula só o peso dos critérios.</p></li>
+      <li><b>Respondentes e seus níveis</b><p>Cada respondente recebe um nome e um nível: estratégico, tático ou operacional. É o nível que define como suas respostas serão ajustadas.</p></li>
+      <li><b>Comparações par a par</b><p>Cada respondente compara os critérios entre si e, se quiser, as alternativas dentro de cada critério, com botões e controles deslizantes.</p></li>
+      <li><b>Checagem de coerência</b><p>Cada matriz de comparações é verificada na hora. Contradições lógicas são apontadas com sugestões de correção, sem precisar recomeçar.</p></li>
+      <li><b>Resultados</b><p>Com um clique, o aplicativo calcula os pesos e o ranking pelo método de análise de extensão de Chang, nos dois modelos, com tabelas coloridas e gráficos.</p></li>
+      <li><b>Exportação</b><p>Todos os resultados vão para uma planilha do Excel, com abas separadas para pesos, rankings e detalhes de cada modelo, para documentar e reproduzir a análise.</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Para quem é</h2>
+      <p>Para pesquisadores e alunos de pós-graduação que usam métodos multicritério, principalmente quando há poucos especialistas disponíveis ou quando eles estão em níveis diferentes da organização. E para gestores públicos, consultores e organizações sem fins lucrativos que precisam priorizar projetos, escolher fornecedores ou distribuir recursos ouvindo pessoas de vários níveis. O uso vai além da estratégia: governança, operações, políticas públicas e gestão da inovação são campos onde decisões complexas envolvem atores com graus diferentes de autoridade.</p>
+      <p>O código é aberto e gratuito: qualquer pessoa pode baixar, usar e adaptar o aplicativo em pesquisa e ensino, a partir do <a href="https://github.com/fellipemartins/Enhanced-Fuzzy-AHP-Calculator" target="_blank" rel="noreferrer">repositório no GitHub</a>. Ele roda no computador do próprio usuário, com a interface aberta no navegador. Usar não exige saber programar, e o aplicativo não guarda dados pessoais: os arquivos gerados ficam com o usuário.</p>
+      <p>Para citar o aplicativo: Martins, F. S. (2025). <em>Level-adjusted enhanced Fuzzy AHP calculator</em> [Software]. https://github.com/fellipemartins/Enhanced-Fuzzy-AHP-Calculator</p>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Próximos passos</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Pesos sob medida</b><p>Deixar o pesquisador definir as regras de ajuste por nível, em vez de usar as proporções fixas atuais.</p></li>
+      <li><b>Sensibilidade e robustez</b><p>Simular o quanto o resultado muda quando os julgamentos variam.</p></li>
+      <li><b>Consenso</b><p>Um módulo para apoiar a construção de consenso em decisões de grupo.</p></li>
+      <li><b>Coleta online</b><p>Uma versão com login de respondentes, para aplicar o questionário a distância em estudos maiores.</p></li>
+      <li><b>As razões por trás das escolhas</b><p>Integração com ferramentas qualitativas, para registrar por que cada respondente comparou como comparou.</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Estágio de inovação</h2>
+      <p>Hoje o FAHP-L está na fase 3: o aplicativo funciona, tem o código aberto ao público, já foi usado em pesquisa e em sala de aula e passou pela avaliação de um encontro científico. A meta é chegar à fase 4, com as novas funções e um uso regular por pesquisadores e organizações fora do laboratório.</p>
+    </div>
+    {{STAGE atual=3 meta=4}}
+    <p class="stage-note">Classificação pela Unified Concept-to-Market Innovation Taxonomy. TRL é o nível de maturidade da tecnologia e IRL, o nível de prontidão para investimento.</p>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose"><h2 class="art-h">Quem faz</h2></div>
+    <div class="people proj-people">
+      <div class="person"><a class="img" href="http://lattes.cnpq.br/7912881403948084" target="_blank" rel="noreferrer" aria-label="Currículo Lattes de Fellipe Silva Martins"><img src="img/fellipe.jpg" alt="Fellipe Silva Martins"></a><p class="role">Desenvolvimento</p><h3>Fellipe Silva Martins</h3><p class="inst">Universidade Presbiteriana Mackenzie</p><a class="lattes" href="http://lattes.cnpq.br/7912881403948084" target="_blank" rel="noreferrer">Currículo Lattes ↗</a></div>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="proj-end"><a href="https://github.com/fellipemartins/Enhanced-Fuzzy-AHP-Calculator" target="_blank" rel="noreferrer" class="btn-line">Abrir o repositório ↗</a></div>
+  </div>
+</article>
+
+{{FOOTER}}
+{{SCRIPT}}
+</body>
+</html>
