@@ -422,3 +422,5 @@ footer a.sig:hover svg { color: var(--red); }
 .areas-lead { font: 300 clamp(18px, 1.6vw, 22px)/1.5 var(--sans); max-width: 60ch; }
 @media (max-width: 960px) { .fit.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .fit.four { grid-template-columns: 1fr; } }
+.prose ul { padding-left: 1.3em; margin: 0 0 22px; }
+.article .prose ul li { font-size: 19px; font-weight: 300; line-height: 1.75; margin-bottom: 4px; }

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- active: producoes.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GroupCognito · Laboratório de IA + Estratégia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+{{HEADER}}
+
+<section class="page-hero proj-hero on-photo">
+  <img src="img/fotos/campus-44.jpg" alt="Campus Higienópolis da Universidade Presbiteriana Mackenzie">
+  <div class="wrap">
+    <p class="eyebrow">Software · Versão estável</p>
+    <h1><strong>GroupCognito</strong></h1>
+    <p class="lead">Uma plataforma de simulação para estudar como grupos de pessoas chegam (ou não) a uma decisão.</p>
+  </div>
+</section>
+
+<article class="article proj-page">
+  <div class="wrap narrow">
+    <a href="producoes.html#software" class="back">← Voltar para produções</a>
+    <div class="prose">
+      <h2 class="art-h">O projeto</h2>
+      <p>Comitês, conselhos, equipes de projeto: boa parte das decisões nas organizações é tomada em grupo. Quem convence quem? Quanto pesa ter informação melhor que os colegas? A rede de relações ajuda o grupo a acertar ou só o faz concordar mais rápido? O GroupCognito é um laboratório virtual para essas perguntas.</p>
+      <p>Na plataforma, cada participante do grupo é um agente com personalidade própria (pelo modelo dos Big Five), carisma, experiência e um perfil de acesso à informação. Os agentes ficam ligados numa rede social, trocam opiniões ao longo de várias rodadas e mudam de ideia sob a influência dos outros. As ligações se fortalecem quando há concordância e enfraquecem quando há desacordo. O pesquisador define o tamanho do grupo, o tipo de rede, a parcela de agentes bem informados e o ritmo em que novas informações aparecem, e acompanha o resultado rodada a rodada.</p>
+      <p>Tudo pode ser ajustado. A rede pode ser completa, aleatória, de Erdős-Rényi, de Watts-Strogatz, de Barabási-Albert ou montada sob medida para imitar uma organização real ou fictícia. Cada agente pode ser configurado um a um: personalidade, carisma, experiência, necessidade de fechamento, busca por informação, acesso privilegiado à informação e um perfil de informação com qualidade, volume, diversidade, atualidade e conhecimento técnico.</p>
+      <p>Além da simulação individual, a plataforma roda experimentos em lote, com milhares de execuções e parâmetros variando de forma controlada, e já entrega a análise estatística dos resultados. E traz um designer de experimentos com inteligência artificial: o pesquisador descreve o que quer investigar, e a IA ajuda a definir as simulações e as executa. Tudo se faz pela interface, sem programar, mas quem preferir também pode usar a plataforma por código.</p>
+      <p>A ideia de partida é simples: a decisão de um grupo nasce do encontro entre a cognição de cada pessoa, seus traços de personalidade, a informação que cada uma tem e a estrutura social que as liga. Esses fatores costumam ser estudados separadamente, e faltam modelos que mostrem como eles interagem ao longo do tempo. Por isso o projeto junta três campos: Ciência da Informação, Análise de Redes Sociais e Estratégia Comportamental. A plataforma nasceu da parceria entre o Programa de Pós-Graduação em Administração e o Programa de Pós-Graduação em Ciência da Informação da Universidade de São Paulo (PPGCI-USP).</p>
+      <p>A plataforma foi apresentada como Produto Técnico-Tecnológico (PTT) no <a href="noticia-enanpad-2026.html">EnANPAD 2026</a>, com o trabalho <em>Plataforma de Simulação Baseada em Agentes para Apoio à Tomada de Decisão em Grupo</em> (<em>Agent-Based Simulation Platform for Analyzing Group Decision-Making Strategies</em>), publicado nos anais da ANPAD. Esta página mostra essa versão estável. Uma nova versão já está em desenvolvimento.</p>
+    </div>
+    <div class="fit">
+      <a href="pesquisa.html#decisao"><span class="n">01</span><h3>Tomada de decisão</h3><p>Simula como opiniões se formam, se espalham e convergem num grupo, e se a decisão final é a correta.</p></a>
+      <a href="pesquisa.html#comportamento"><span class="n">02</span><h3>Comportamento</h3><p>Traços de personalidade, carisma e experiência mudam o quanto cada agente influencia e se deixa influenciar.</p></a>
+      <a href="pesquisa.html#inovacao"><span class="n">03</span><h3>Ferramenta de pesquisa</h3><p>Testa cenários que seriam caros ou impossíveis de montar com grupos reais, em lote ou com ajuda de um designer de experimentos com IA.</p></a>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <figure class="proj-shot"><img src="img/groupcognito-interface.jpg" alt="Tela inicial da plataforma, com o painel de configuração da simulação à esquerda"><figcaption>A tela inicial: no painel lateral, o pesquisador escolhe o número de agentes, as rodadas, a parcela de agentes bem informados e o tipo de rede. As abas dão acesso à simulação, ao módulo de experimentos em lote e ao designer de experimentos com IA.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/groupcognito-agente.jpg" alt="Painel de configuração de um agente, com controles de carisma, experiência, necessidade de fechamento, busca por informação e perfil de informação"><figcaption>Cada agente pode ser configurado individualmente: atributos pessoais, acesso privilegiado à informação e um perfil de informação em cinco dimensões.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/groupcognito-rede.jpg" alt="Rede social de agentes, com nós vermelhos e azuis e losangos amarelos para os agentes bem informados"><figcaption>A rede do grupo depois de uma simulação. A cor indica a opinião de cada agente, o tamanho indica sua centralidade, os losangos marcam quem começou bem informado e a espessura das linhas mostra a força de cada ligação.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/groupcognito-opinioes.jpg" alt="Gráfico de linhas com a opinião de cada agente ao longo das rodadas"><figcaption>A evolução da opinião de cada agente, rodada a rodada.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/groupcognito-hits.jpg" alt="Dois grafos lado a lado mostrando hubs e autoridades pelo algoritmo HITS"><figcaption>Quem de fato influenciou o grupo: os algoritmos HITS e PageRank são aplicados ao registro real de influências da simulação, e não só ao desenho da rede.</figcaption></figure>
+    <figure class="proj-shot"><img src="img/groupcognito-faccoes.jpg" alt="Rede dividida em duas facções de opinião, com as ligações entre facções destacadas em laranja"><figcaption>Análise de facções: os agentes são agrupados pela opinião, e as ligações que cruzam de uma facção para a outra (as pontes) aparecem em laranja.</figcaption></figure>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Como funciona uma rodada</h2>
+      <p>Antes da primeira rodada, a plataforma monta a rede e cria os agentes, com valores padrão, aleatórios ou definidos um a um. Depois, a cada rodada, repete o mesmo ciclo:</p>
+    </div>
+    <ol class="steps">
+      <li><b>Evidência informacional</b><p>Cada agente forma um juízo a partir da própria informação, medida por seis dimensões (qualidade, volume, diversidade, atualidade, conhecimento técnico e experiência). Elas são combinadas por média geométrica, de modo que uma dimensão muito fraca derruba o conjunto e não pode ser compensada pelas outras.</p></li>
+      <li><b>Influência social</b><p>O agente olha para os vizinhos na rede. A opinião de cada um pesa conforme o carisma de quem fala e a força da ligação entre os dois.</p></li>
+      <li><b>Atualização da opinião</b><p>A nova opinião combina a evidência, a influência social e a ancoragem na opinião anterior. A personalidade de cada agente define quanto pesa cada uma dessas partes.</p></li>
+      <li><b>Registro e adaptação</b><p>Cada mudança de opinião é registrada como um evento de influência (quem convenceu quem), e as ligações da rede se fortalecem ou enfraquecem conforme a concordância.</p></li>
+      <li><b>Crescimento do grupo</b><p>Se o pesquisador quiser, novos agentes entram no grupo a cada rodada.</p></li>
+    </ol>
+    <div class="prose">
+      <p>Ao fim, a plataforma calcula consenso, acerto da decisão e métricas da rede, aplica PageRank e HITS ao histórico de influências e mostra tudo em mais de 15 gráficos interativos, prontos para exportar.</p>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">O que a plataforma faz</h2>
+    </div>
+    <ol class="steps">
+      <li><b>A rede social</b><p>Redes completas, aleatórias, de Erdős-Rényi, de Watts-Strogatz, de Barabási-Albert ou personalizadas para imitar uma organização, com ligações que se ajustam conforme os agentes concordam ou discordam.</p></li>
+      <li><b>Agentes sob medida</b><p>Cada agente pode ter personalidade, atributos e perfil de informação próprios, ou o grupo pode ser gerado com valores padrão ou aleatórios.</p></li>
+      <li><b>A evolução das opiniões</b><p>Gráficos e tabelas com a opinião de cada agente por rodada, a formação de consenso e o fluxo de agentes entre as opiniões.</p></li>
+      <li><b>O peso da informação</b><p>A comparação entre agentes bem informados e os demais, para ver se quem sabe mais consegue levar o grupo à decisão certa.</p></li>
+      <li><b>Quem influenciou quem</b><p>Um grafo direcional das influências reais, com os agentes que mais convenceram os outros e os que mais foram ouvidos.</p></li>
+      <li><b>Experimentos em lote</b><p>Milhares de simulações de uma vez, com variáveis independentes e dependentes definidas pelo pesquisador. A plataforma já faz a estatística: descritivas, correlação, regressão, ANOVA e teste t, com mapas de calor, dispersões e distribuições, e ajuda a interpretar os resultados.</p></li>
+      <li><b>Designer de experimentos com IA</b><p>Um assistente, ligado a modelos de linguagem da OpenAI ou da Anthropic, que transforma uma pergunta de pesquisa na configuração de um experimento e o executa.</p></li>
+      <li><b>Dados para análise</b><p>Exportação dos resultados e da configuração em JSON e CSV, para repetir o experimento ou levar os dados a outras ferramentas.</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Impacto</h2>
+      <p>A plataforma já é usada em pesquisa e em ensino. Até aqui, ela deu origem a:</p>
+      <ul>
+        <li>uma tese;</li>
+        <li>dois artigos submetidos a periódicos;</li>
+        <li>uso em sala de aula, para mostrar na prática como grupos decidem;</li>
+        <li>um repositório de código aberto e auditável, que permite a outros pesquisadores conferir e reproduzir as simulações.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose">
+      <h2 class="art-h">Estágio de inovação</h2>
+      <p>Hoje o GroupCognito está na fase 2: a versão estável funciona, já foi usada em pesquisa e passou pela avaliação de um encontro científico. A meta é chegar à fase 3 com a nova versão, pronta para ser usada por outros pesquisadores e professores fora do laboratório.</p>
+    </div>
+    {{STAGE atual=2 meta=3}}
+    <p class="stage-note">Classificação pela Unified Concept-to-Market Innovation Taxonomy. TRL é o nível de maturidade da tecnologia e IRL, o nível de prontidão para investimento.</p>
+  </div>
+
+  <div class="wrap narrow">
+    <div class="prose"><h2 class="art-h">Quem faz</h2></div>
+    <div class="people proj-people">
+      <div class="person"><a class="img" href="http://lattes.cnpq.br/7912881403948084" target="_blank" rel="noreferrer" aria-label="Currículo Lattes de Fellipe Silva Martins"><img src="img/fellipe.jpg" alt="Fellipe Silva Martins"></a><p class="role">Desenvolvimento</p><h3>Fellipe Silva Martins</h3><p class="inst">Universidade Presbiteriana Mackenzie</p><a class="lattes" href="http://lattes.cnpq.br/7912881403948084" target="_blank" rel="noreferrer">Currículo Lattes ↗</a></div>
+      <div class="person"><a class="img" href="http://lattes.cnpq.br/7224504768054079" target="_blank" rel="noreferrer" aria-label="Currículo Lattes de Marcos Luiz Mucheroni"><img src="img/mucheroni.jpg" alt="Marcos Luiz Mucheroni"></a><p class="role">Coautor</p><h3>Marcos Luiz Mucheroni</h3><p class="inst">Universidade de São Paulo</p><a class="lattes" href="http://lattes.cnpq.br/7224504768054079" target="_blank" rel="noreferrer">Currículo Lattes ↗</a></div>
+    </div>
+  </div>
+</article>
+
+{{FOOTER}}
+{{SCRIPT}}
+</body>
+</html>
