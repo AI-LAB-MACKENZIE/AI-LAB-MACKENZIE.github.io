@@ -45,6 +45,34 @@ def link_institutions(html):
     return "".join(out)
 
 
+# Estágio de inovação (Unified Concept-to-Market Innovation Taxonomy). Uso na página: {{STAGE atual=2 meta=3}}
+STAGES = [
+    ("Ideação e conceito", "Encaixe entre problema e solução, proposta de valor inicial, primeira estimativa de mercado.", "TRL 1–2 · IRL 1–2"),
+    ("Pré-seed e validação", "Protótipos de baixa fidelidade, conversa com potenciais usuários, análise da concorrência.", "TRL 3–4 · IRL 3–4"),
+    ("Seed e MVP", "Produto mínimo viável lançado, primeiros usuários e pilotos reais.", "TRL 5–6 · IRL 5–6"),
+    ("Crescimento inicial", "Encaixe entre produto e mercado comprovado, modelo repetível, custos previsíveis.", "TRL 7–8 · IRL 7–8"),
+    ("Escala", "Operação em grande volume, canais otimizados, expansão geográfica.", "TRL 9 · IRL 9"),
+    ("Maturidade", "Posição consolidada no mercado, receitas previsíveis, governança corporativa.", "Inovação contínua"),
+]
+
+
+def stage(m):
+    now, goal = int(m.group(1)), int(m.group(2))
+    cells = []
+    for i, (name, desc, lvl) in enumerate(STAGES, 1):
+        cls, tag = "", ""
+        if i == now:
+            cls, tag = " now", '<span class="st-tag">Hoje</span>'
+        elif i == goal:
+            cls, tag = " goal", '<span class="st-tag">Meta</span>'
+        elif now < i < goal:
+            cls = " path"
+        elif i < now:
+            cls = " past"
+        cells.append(f'<li class="st{cls}">{tag}<span class="st-n">{i:02d}</span><b>{name}</b><p>{desc}</p><span class="st-lvl">{lvl}</span></li>')
+    return f'<ol class="stages" aria-label="Estágio atual: fase {now}. Meta: fase {goal}.">{"".join(cells)}</ol>'
+
+
 def header(active):
     on = ' class="on"'
     links = "".join(f'<a href="{h}"{on if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -73,6 +101,7 @@ for page in sorted((SRC / "pages").glob("*.html")):
     html = (html.replace("{{HEADER}}", header(active.group(1) if active else ""))
                 .replace("{{FOOTER}}", FOOTER).replace("{{M}}", M)
                 .replace("{{SCRIPT}}", f"<script>{SCRIPT}</script>"))
+    html = re.sub(r"\{\{STAGE atual=(\d) meta=(\d)\}\}", stage, html)
     html = link_institutions(html)
     html = html.replace('href="site.css"', f'href="site.css?v={CSS_V}"')
     html = html.replace('<meta name="viewport" content="width=device-width, initial-scale=1">',
