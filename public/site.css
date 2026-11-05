@@ -412,3 +412,13 @@ footer a.sig:hover svg { color: var(--red); }
   .st-tag { top: 16px; left: auto; right: 16px; }
   .st.now .st-tag { color: #fff; }
 }
+
+/* Atuação: frentes do laboratório antes das áreas de pesquisa */
+.fronts { padding-top: clamp(48px, 6vw, 80px); }
+.fit.four { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 0; }
+.fit > div { display: flex; flex-direction: column; }
+.fit > div p { flex: 1; }
+.areas-head { margin: clamp(56px, 7vw, 96px) 0 14px; }
+.areas-lead { font: 300 clamp(18px, 1.6vw, 22px)/1.5 var(--sans); max-width: 60ch; }
+@media (max-width: 960px) { .fit.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .fit.four { grid-template-columns: 1fr; } }

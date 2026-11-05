@@ -9,7 +9,7 @@ SRC = pathlib.Path(__file__).resolve().parent
 OUT = SRC.parent / "public"
 M = (OUT / "m-symbol.svg").read_text().replace("<svg ", '<svg aria-hidden="true" ', 1)
 
-NAV = [("index.html", "Home"), ("pesquisa.html", "Pesquisa"), ("producoes.html", "Produções"),
+NAV = [("index.html", "Home"), ("pesquisa.html", "Atuação"), ("producoes.html", "Produções"),
        ("noticias.html", "Notícias"), ("equipe.html", "Equipe"), ("contato.html", "Contato")]
 
 # Regra: toda menção à Universidade, ao Centro (Escola de Negócios) e ao PPGA leva ao respectivo site.
