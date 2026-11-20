@@ -29,8 +29,9 @@ INST = [("Universidade Presbiteriana Mackenzie", "https://www.mackenzie.br/"),
         ("Mackenzie Presbyterian University", "https://www.mackenzie.br/"),
         ("Center for Applied Social Sciences", "https://www.mackenzie.br/universidade/unidades-academicas/ccsa"),
         ("Mackenzie Business School", "https://www.mackenzie.br/universidade/unidades-academicas/ccsa"),
-        ("Graduate Program in Business Administration", PPGA),
-        ("Master's and PhD Program in Business Administration", PPGA)]
+        ("Business Management Graduate School", PPGA)]   # nome oficial do PPGA em inglês (regra do usuário)
+# Nomes do PPGA em inglês que não se usam mais: o build avisa se aparecerem.
+OLD_PPGA_EN = re.compile(r"(?i)graduate program in business administration|master's and phd program in business administration")
 INST_RE = re.compile("|".join(re.escape(n) for n, _ in sorted(INST, key=lambda x: -len(x[0]))))
 INST_URL = dict(INST)
 SKIP = {"a", "title", "script", "style", "svg", "button", "textarea"}
@@ -92,18 +93,29 @@ def stage(m, lang="pt"):
     return f'<ol class="stages" aria-label="{label}">{"".join(cells)}</ol>'
 
 
+# Bandeiras do seletor de idioma (SVG simplificado, 21x14).
+FLAG_US = ('<svg class="flag" viewBox="0 0 21 14" aria-hidden="true"><rect width="21" height="14" fill="#fff"/>'
+           + "".join(f'<rect y="{i * 2.154:.2f}" width="21" height="1.077" fill="#B22234"/>' for i in range(7))
+           + '<rect width="9" height="7.54" fill="#3C3B6E"/>'
+           + "".join(f'<circle cx="{x}" cy="{y}" r=".45" fill="#fff"/>' for y in (1.4, 3.77, 6.1) for x in (1.5, 3.5, 5.5, 7.5))
+           + '</svg>')
+FLAG_BR = ('<svg class="flag" viewBox="0 0 21 14" aria-hidden="true"><rect width="21" height="14" fill="#009C3B"/>'
+           '<path d="M10.5 1.6 19 7l-8.5 5.4L2 7z" fill="#FFDF00"/><circle cx="10.5" cy="7" r="3.1" fill="#002776"/>'
+           '<path d="M7.5 6.4c2-.5 4.2-.3 6 .7" stroke="#fff" stroke-width=".55" fill="none"/></svg>')
+
+
 def header(active, lang, name):
     on = ' class="on"'
     links = "".join(f'<a href="{h}"{on if h == active else ""}>{t}</a>' for h, t in NAV[lang])
     if lang == "en":
         sig = ("AI + Strategy Lab, Mackenzie", "Laboratory of", "AI + Strategy")
-        switch = f'<a class="lang" href="../{name}" hreflang="pt-BR" lang="pt-BR" title="Versão em português">PT</a>'
+        switch = f'<a class="lang" href="../{name}" hreflang="pt-BR" lang="pt-BR" title="Versão em português">{FLAG_BR}<span>PT</span></a>'
     else:
         sig = ("Laboratório de IA + Estratégia, Mackenzie", "Laboratório de", "IA + Estratégia")
-        switch = f'<a class="lang" href="en/{name}" hreflang="en" lang="en" title="English version">EN</a>'
+        switch = f'<a class="lang" href="en/{name}" hreflang="en" lang="en" title="English version">{FLAG_US}<span>EN</span></a>'
     return (f'<header id="hdr"><a href="index.html" class="sig" aria-label="{sig[0]}">{M}'
             f'<span class="t"><small>{sig[1]}</small><b>{sig[2]}</b></span></a>'
-            f'<nav id="nav">{links}{switch}</nav><button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button></header>')
+            f'<nav id="nav">{links}</nav>{switch}<button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button></header>')
 
 
 FOOTER = {"pt": (SRC / "footer.html").read_text().replace("{{M}}", M),
@@ -155,6 +167,8 @@ for lang, folder, out in (("pt", SRC / "pages", OUT), ("en", SRC / "pages" / "en
                 print(f"AVISO: en/{page.name} não tem versão em português")
         elif not (SRC / "pages" / "en" / page.name).exists():
             print(f"AVISO: {page.name} ainda não tem versão em inglês (o botão EN vai dar 404)")
+        if lang == "en" and OLD_PPGA_EN.search(html):
+            print(f"AVISO: en/{page.name} usa um nome antigo do PPGA; use Business Management Graduate School")
         if "—" in html:
             print(f"AVISO: travessão (—) em {lang}/{page.name}")
         (out / page.name).write_text(html)

@@ -56,7 +56,12 @@ header.solid::after { transform: scaleX(1); }
 nav { display: flex; gap: 30px; }
 nav a { font: 500 12px var(--sans); letter-spacing: .14em; text-transform: uppercase; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .2s; }
 nav a:hover, nav a.on { border-bottom-color: var(--red); }
-nav a.lang { margin-left: -6px; padding-left: 16px; border-left: 1px solid currentColor; border-left-color: rgba(127,127,127,.5); letter-spacing: .1em; }
+nav { margin-left: auto; }
+.lang { display: inline-flex; align-items: center; gap: 8px; flex: none; padding: 7px 14px 7px 10px; border-radius: 999px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.55); font: 700 12px var(--sans); letter-spacing: .12em; backdrop-filter: blur(6px); transition: background .2s, border-color .2s, color .2s; }
+.lang:hover { background: rgba(255,255,255,.3); }
+.lang .flag { width: 21px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
+header.solid .lang, header.open .lang { background: #F3F3F3; border-color: #D6D6D6; }
+header.solid .lang:hover, header.open .lang:hover { border-color: var(--red); background: #fff; }
 .menu-btn { display: none; background: none; border: 0; color: inherit; font: 500 12px var(--sans); letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
 
 /* ---------- Capa (home) ---------- */
@@ -209,6 +214,9 @@ footer a:hover { color: #fff; }
 .partners { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .partner { border: 1px dashed var(--line); padding: 40px; display: flex; gap: 24px; align-items: center; color: var(--ink-soft); }
 .partner .logo { width: 84px; height: 84px; border-radius: 50%; background: var(--paper-2); flex: none; display: grid; place-items: center; font-size: 12px; }
+.partner.on { border-style: solid; color: var(--ink-soft); }
+.partner.on .logo svg { width: 46px; height: 46px; color: var(--red); }
+.partner.on p { margin-bottom: 14px; }
 
 /* ---------- Projetos / publicações ---------- */
 .proj { display: grid; grid-template-columns: 1fr 1.3fr; border: 1px solid var(--line); }
@@ -279,7 +287,7 @@ form.msg button:disabled { opacity: .6; cursor: wait; }
   header.open { background: #fff; color: var(--ink); flex-wrap: wrap; }
   header.open nav { display: flex; flex-direction: column; gap: 4px; width: 100%; order: 3; padding: 12px 0 8px; }
   header.open nav a { font-size: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  header.open nav a.lang { margin-left: 0; padding-left: 0; border-left: 0; }
+  .lang { margin-left: auto; padding: 6px 11px 6px 8px; }
   .feature, .team-band, .contact, .proj { grid-template-columns: 1fr; }
   .feature .img { min-height: 320px; }
   .news, .news.three { grid-template-columns: 1fr; }

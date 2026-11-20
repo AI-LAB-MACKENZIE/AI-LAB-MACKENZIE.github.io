@@ -20,7 +20,7 @@
   });
 
   // Troca de idioma: leva junto a aba ou âncora aberta.
-  const lang = document.querySelector('nav a.lang');
+  const lang = document.querySelector('a.lang');
   if (lang) lang.addEventListener('click', () => { if (location.hash) lang.href = lang.href.split('#')[0] + location.hash; });
 
   const io = new IntersectionObserver(es => es.forEach(e => {
