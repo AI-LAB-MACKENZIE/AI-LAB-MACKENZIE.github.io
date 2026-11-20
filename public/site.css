@@ -56,6 +56,7 @@ header.solid::after { transform: scaleX(1); }
 nav { display: flex; gap: 30px; }
 nav a { font: 500 12px var(--sans); letter-spacing: .14em; text-transform: uppercase; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .2s; }
 nav a:hover, nav a.on { border-bottom-color: var(--red); }
+nav a.lang { margin-left: -6px; padding-left: 16px; border-left: 1px solid currentColor; border-left-color: rgba(127,127,127,.5); letter-spacing: .1em; }
 .menu-btn { display: none; background: none; border: 0; color: inherit; font: 500 12px var(--sans); letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
 
 /* ---------- Capa (home) ---------- */
@@ -278,6 +279,7 @@ form.msg button:disabled { opacity: .6; cursor: wait; }
   header.open { background: #fff; color: var(--ink); flex-wrap: wrap; }
   header.open nav { display: flex; flex-direction: column; gap: 4px; width: 100%; order: 3; padding: 12px 0 8px; }
   header.open nav a { font-size: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  header.open nav a.lang { margin-left: 0; padding-left: 0; border-left: 0; }
   .feature, .team-band, .contact, .proj { grid-template-columns: 1fr; }
   .feature .img { min-height: 320px; }
   .news, .news.three { grid-template-columns: 1fr; }

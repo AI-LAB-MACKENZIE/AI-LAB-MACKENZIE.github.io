@@ -16,8 +16,12 @@
   btn.addEventListener('click', () => {
     const open = hdr.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
-    btn.textContent = open ? 'Fechar' : 'Menu';
+    btn.textContent = open ? (document.documentElement.lang === 'en' ? 'Close' : 'Fechar') : 'Menu';
   });
+
+  // Troca de idioma: leva junto a aba ou âncora aberta.
+  const lang = document.querySelector('nav a.lang');
+  if (lang) lang.addEventListener('click', () => { if (location.hash) lang.href = lang.href.split('#')[0] + location.hash; });
 
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

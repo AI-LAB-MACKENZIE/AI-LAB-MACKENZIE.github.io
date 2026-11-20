@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- active: contato.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · AI + Strategy Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+{{HEADER}}
+
+<section class="page-hero short on-photo">
+  <img src="img/fotos/campus-entrada.jpg" alt="Front of the Higienópolis campus with the Mackenzie emblem" style="object-position:50% 38%">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h1>Get <strong>in touch</strong></h1>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap contact">
+    <div>
+      <p class="eyebrow">Let's talk</p>
+      <p class="intro">We are always open to new collaborations and to students interested in our research.</p>
+      <ul class="info">
+        <li><span class="k">Address</span><span>Mackenzie Business School<br><a href="https://www.mackenzie.br/" target="_blank" rel="noreferrer">Mackenzie Presbyterian University</a><br>Rua Maria Antônia, 163, Room 13, Higienópolis<br>São Paulo (SP), Brazil</span></li>
+        <li><span class="k">Email</span><a href="mailto:ailabmack@gmail.com">ailabmack@gmail.com</a></li>
+        <li><span class="k">Phone</span><a href="tel:+551121148597">+55 (11) 2114-8597</a></li>
+        <li><span class="k">GitHub</span><a href="https://github.com/ailabmack" target="_blank" rel="noreferrer">github.com/ailabmack</a></li>
+      </ul>
+    </div>
+    <form class="msg" id="msg">
+      <h3>Send a message</h3>
+      <label for="n">Name</label><input id="n" required placeholder="Your name">
+      <label for="e">Email</label><input id="e" type="email" required placeholder="Your email">
+      <label for="s">Subject</label><input id="s" required placeholder="What would you like to talk about?">
+      <label for="m">Message</label><textarea id="m" required placeholder="Your message"></textarea>
+      <input type="text" name="_honey" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <button class="btn-red" type="submit" id="send">Send message</button>
+      <p class="form-status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="wrap">
+    <iframe class="map" title="Map: Rua Maria Antônia, 163, São Paulo" loading="lazy" src="https://www.google.com/maps?q=Rua+Maria+Ant%C3%B4nia,+163,+S%C3%A3o+Paulo&output=embed"></iframe>
+  </div>
+</section>
+
+{{FOOTER}}
+{{SCRIPT}}
+<script>
+  // Envio direto para o e-mail do laboratório via FormSubmit (formsubmit.co), sem abrir o programa de e-mail.
+  // Na primeira mensagem, o FormSubmit envia um e-mail de ativação para ailabmack@gmail.com (clicar uma vez).
+  // Depois da ativação, dá para trocar o endereço abaixo pelo código aleatório que o FormSubmit fornece.
+  const ENDPOINT = 'https://formsubmit.co/ajax/ailabmack@gmail.com';
+  const form = document.getElementById('msg'), btn = document.getElementById('send'), status = document.getElementById('status');
+  const v = id => document.getElementById(id).value.trim();
+  const show = (text, kind) => { status.textContent = text; status.className = 'form-status ' + kind; };
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (v('hp')) return;                       // armadilha para robôs
+    btn.disabled = true; btn.textContent = 'Sending…'; show('', '');
+    try {
+      const r = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          Nome: v('n'), 'E-mail': v('e'), Assunto: v('s'), Mensagem: v('m'),
+          _replyto: v('e'), _subject: `[Site AI Lab] ${v('s')}`, _template: 'table', _honey: v('hp')
+        })
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || String(data.success) !== 'true') throw new Error(data.message || r.status);
+      form.reset();
+      show('Message sent. Thank you! We will reply soon to the email you provided.', 'ok');
+    } catch (err) {
+      show('We could not send your message right now. Please try again or write to ailabmack@gmail.com.', 'err');
+    } finally {
+      btn.disabled = false; btn.textContent = 'Send message';
+    }
+  });
+</script>
+</body>
+</html>
